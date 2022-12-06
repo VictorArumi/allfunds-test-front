@@ -1,7 +1,12 @@
 import AppStyled from "./AppStyled";
+import Header from "./components/Header";
 
 function App() {
-  return <AppStyled>news app in progress...</AppStyled>;
+  return (
+    <AppStyled>
+      <Header />
+    </AppStyled>
+  );
 }
 
 export default App;
