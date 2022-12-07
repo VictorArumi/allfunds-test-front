@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import AppStyled from "./AppStyled";
 import Header from "./components/Header/Header";
 import NewsList from "./components/NewsList/NewsList";
-import mockNews from "./mocks/mockNews";
 import { loadNewsThunk } from "./redux/thunks/newsThunks";
 
 function App() {
