@@ -23,7 +23,7 @@ const HeaderStyled = styled.div`
     }
 
     &__text {
-      color: white;
+      color: #ffffff;
       font-size: 3rem;
       margin: 0.5rem;
       text-align: center;
@@ -60,12 +60,12 @@ const HeaderStyled = styled.div`
 
     .nav-button {
       cursor: pointer;
-      color: white;
+      color: #ffffff;
       width: 5rem;
       height: 2rem;
       background-color: #212948;
       border-radius: 1rem;
-      border: 0.1rem solid white;
+      border: 0.1rem solid #ffffff;
 
       @media (max-width: 700px) {
         height: 1.5rem;

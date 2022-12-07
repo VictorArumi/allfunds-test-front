@@ -94,7 +94,7 @@ const NewStyled = styled.article`
   button {
     display: flex;
     height: auto;
-    color: white;
+    color: #ffffff;
     padding: 0.5rem;
     background-color: #212948;
     border-radius: 0.5rem;
