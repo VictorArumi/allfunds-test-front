@@ -29,9 +29,8 @@ const NewsPageStyled = styled.div`
     color: #ffffff;
 
     &--archived {
-      color: #c7c3c0;
+      background-color: #c00000;
     }
-
     @media (max-width: 700px) {
       font-size: 1rem;
     }

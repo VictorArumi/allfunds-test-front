@@ -43,35 +43,6 @@ const HeaderStyled = styled.div`
       }
     }
   }
-
-  .navigation-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0.5rem;
-    gap: 5rem;
-    border-bottom: 0.1rem solid #ededed;
-    flex-wrap: wrap;
-
-    @media (max-width: 700px) {
-      gap: 0.5rem;
-      padding: 0.3rem;
-    }
-
-    .nav-button {
-      cursor: pointer;
-      color: #ffffff;
-      width: 5rem;
-      height: 2rem;
-      background-color: #212948;
-      border-radius: 1rem;
-      border: 0.1rem solid #ffffff;
-
-      @media (max-width: 700px) {
-        height: 1.5rem;
-      }
-    }
-  }
 `;
 
 export default HeaderStyled;

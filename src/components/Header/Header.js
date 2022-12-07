@@ -1,3 +1,4 @@
+import NavigationBar from "../Navigation/NavigationBar";
 import HeaderStyled from "./HeaderStyled";
 
 const Header = () => {
@@ -9,13 +10,9 @@ const Header = () => {
           src={`../../news-favicon.ico`}
           alt="App logo"
         />
-
         <h1 className="app-title__text">Allfunds news app</h1>
       </div>
-      <nav className="navigation-container">
-        <button className="nav-button">News</button>
-        <button className="nav-button">Archived</button>
-      </nav>
+      <NavigationBar />
     </HeaderStyled>
   );
 };
