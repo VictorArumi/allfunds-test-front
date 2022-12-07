@@ -1,8 +1,14 @@
 import { render, screen } from "@testing-library/react";
+import { Provider } from "react-redux";
 import App from "./App";
+import store from "./redux/store";
 
 test("renders news app in progress", () => {
-  render(<App />);
+  render(
+    <Provider store={store}>
+      <App />
+    </Provider>
+  );
   const linkElement = screen.getByText(/Allfunds news app/i);
   expect(linkElement).toBeInTheDocument();
 });
