@@ -12,7 +12,7 @@ const New = ({ _new }) => {
           <p className="post-date">
             Posted:{" "}
             <time dateTime={_new.storageDate}>
-              {moment(_new.storageDate).format("MMMM Do YYYY, h:mm a")}
+              {moment(_new.storageDate).format("MMMM Do YYYY")}
             </time>{" "}
           </p>
         </div>
@@ -26,7 +26,7 @@ const New = ({ _new }) => {
             <p className="archive-date">
               Archived:{" "}
               <time dateTime={_new.archiveDate}>
-                {moment(_new.archiveDate).format("MMMM Do YYYY, h:mm a")}
+                {moment(_new.archiveDate).format("MMMM Do YYYY")}
               </time>{" "}
             </p>
             <button className="delete-button">Delete New</button>

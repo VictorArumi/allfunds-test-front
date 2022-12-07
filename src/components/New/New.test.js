@@ -7,8 +7,8 @@ const expectedDescriptionText = mockNew.description;
 const expectedAuthorText = mockNew.author.authorName;
 const expectedNewBodyText = mockNew.content;
 const totalExpectedButtons = 1;
-const expectedPostedDate = "December 5th 2022, 9:00 pm";
-const expectedArchiveDate = "December 8th 2022, 12:00 am";
+const expectedPostedDate = "December 5th 2022";
+const expectedArchiveDate = "December 8th 2022";
 
 describe("Given a New component", () => {
   describe("When it's invoked with archived property false", () => {
