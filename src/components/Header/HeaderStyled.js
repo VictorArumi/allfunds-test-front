@@ -58,7 +58,8 @@ const HeaderStyled = styled.div`
       padding: 0.3rem;
     }
 
-    button {
+    .nav-button {
+      cursor: pointer;
       color: white;
       width: 5rem;
       height: 2rem;

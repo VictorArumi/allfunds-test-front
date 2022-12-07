@@ -13,8 +13,8 @@ const Header = () => {
         <h1 className="app-title__text">Allfunds news app</h1>
       </div>
       <nav className="navigation-container">
-        <button>News</button>
-        <button>Archived</button>
+        <button className="nav-button">News</button>
+        <button className="nav-button">Archived</button>
       </nav>
     </HeaderStyled>
   );
