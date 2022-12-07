@@ -4,9 +4,9 @@ import NewsListStyled from "./NewsListStyled";
 const NewsList = ({ news }) => {
   return (
     <NewsListStyled>
-      {news.map((_new, position) => {
+      {news.map((_new) => {
         return (
-          <li className="new-container" key={position}>
+          <li className="new-container" key={_new.id}>
             <New _new={_new} />
           </li>
         );

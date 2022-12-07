@@ -27,7 +27,7 @@ const mockNews = [
       authorName: "Dan Abramov",
       id: "638c7ab09697e7ea8b97edba",
     },
-    id: "638c88209697e7ea8b97edd0",
+    id: "638c88209697e7ea8b97edd1",
   },
 ];
 
