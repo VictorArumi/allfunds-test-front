@@ -8,7 +8,7 @@ const expectedAuthorText = mockNew.author.authorName;
 const expectedNewBodyText = mockNew.content;
 const totalExpectedButtons = 1;
 const expectedPostedDate = "December 5th 2022";
-const expectedArchiveDate = "December 8th 2022";
+const expectedArchiveDate = "December 7th 2022";
 
 describe("Given a New component", () => {
   describe("When it's invoked with archived property false", () => {
@@ -49,7 +49,7 @@ describe("Given a New component", () => {
   describe("When it's invoked with archived property true", () => {
     test("Then it should render a the New component with newMock title, author, post and archive dates and content values, and a button with 'Delete New' text", () => {
       mockNew.archived = true;
-      mockNew.archiveDate = "2022-12-07T23:00:00.000Z";
+      mockNew.archiveDate = "2022-12-07T17:00:00.000Z";
       const deleteButtonText = "Delete New";
 
       render(<New _new={mockNew} />);
