@@ -2,7 +2,6 @@ import New from "../New/New";
 import NewsListStyled from "./NewsListStyled";
 
 const NewsList = ({ news }) => {
-  console.log(news);
   return (
     <NewsListStyled>
       {news.map((_new, position) => {
