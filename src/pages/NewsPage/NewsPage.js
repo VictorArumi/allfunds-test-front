@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import NewsList from "../../components/NewsList/NewsList";
 import { loadNewsThunk } from "../../redux/thunks/newsThunks";
-import NewsPageSyled from "./NewsPageStyled";
+import NewsPageStyled from "./NewsPageStyled";
 
 const NewsPage = () => {
   const dispatch = useDispatch();
@@ -13,14 +13,14 @@ const NewsPage = () => {
   }, [dispatch]);
 
   return (
-    <NewsPageSyled>
+    <NewsPageStyled>
       <div className="page-title-container">
         <h2 className="page-title">News view</h2>
       </div>
       <div className="list-container">
         <NewsList news={news} />
       </div>
-    </NewsPageSyled>
+    </NewsPageStyled>
   );
 };
 
