@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const NewsPageSyled = styled.div`
+const NewsPageStyled = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -26,7 +26,11 @@ const NewsPageSyled = styled.div`
     padding: 0.2rem 1rem;
     margin: 0;
     font-size: 3rem;
-    color: white;
+    color: #ffffff;
+
+    &--archived {
+      color: #c7c3c0;
+    }
 
     @media (max-width: 700px) {
       font-size: 1rem;
@@ -42,4 +46,4 @@ const NewsPageSyled = styled.div`
   }
 `;
 
-export default NewsPageSyled;
+export default NewsPageStyled;
