@@ -12,13 +12,6 @@ const AppStyled = styled.div`
   @media (max-width: 700px) {
     padding-top: 5rem;
   }
-
-  .list-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 70%;
-  }
 `;
 
 export default AppStyled;
