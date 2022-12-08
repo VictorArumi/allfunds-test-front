@@ -11,7 +11,7 @@ const NavigationBarStyled = styled.div`
     flex-wrap: wrap;
 
     @media (max-width: 700px) {
-      gap: 0.5rem;
+      gap: 0.4rem;
       padding: 0.3rem;
     }
 
@@ -33,8 +33,9 @@ const NavigationBarStyled = styled.div`
 
       @media (max-width: 700px) {
         height: 1.5rem;
-        width: 5.5rem;
-        font-size: 0.8rem;
+        width: 4rem;
+        font-size: 0.75rem;
+        letter-spacing: 0px;
       }
     }
   }
