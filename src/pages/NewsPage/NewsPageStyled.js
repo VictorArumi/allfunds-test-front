@@ -6,7 +6,7 @@ const NewsPageStyled = styled.div`
   flex-direction: column;
   align-items: center;
 
-  .page-title-container {
+  .page-header {
     width: 70%;
 
     display: flex;
@@ -18,21 +18,48 @@ const NewsPageStyled = styled.div`
     @media (max-width: 700px) {
       margin: 1rem 0;
     }
+
+    &__title {
+      display: flex;
+      background-color: #212948;
+      padding: 0.2rem 1rem;
+      margin: 0;
+      font-size: 3rem;
+      color: #ffffff;
+
+      &--archived {
+        background-color: #c00000;
+      }
+      @media (max-width: 700px) {
+        font-size: 1rem;
+      }
+    }
   }
 
-  .page-title {
+  .add-new-container {
+    cursor: pointer;
+    margin-top: 1rem;
+    gap: 0.4rem;
     display: flex;
-    background-color: #212948;
-    padding: 0.2rem 1rem;
-    margin: 0;
-    font-size: 3rem;
-    color: #ffffff;
+    align-items: center;
+    justify-content: center;
 
-    &--archived {
-      background-color: #c00000;
-    }
     @media (max-width: 700px) {
-      font-size: 1rem;
+      margin: 0;
+    }
+
+    .icon-container {
+      display: flex;
+      align-items: center;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin: 0;
+
+      @media (max-width: 700px) {
+        font-size: 1rem;
+      }
     }
   }
 
