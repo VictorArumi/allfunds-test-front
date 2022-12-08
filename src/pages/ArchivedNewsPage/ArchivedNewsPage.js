@@ -14,8 +14,10 @@ const ArchivedNewsPage = () => {
 
   return (
     <NewsPageStyled>
-      <div className="page-title-container">
-        <h2 className="page-title page-title--archived">Archived News view</h2>
+      <div className="page-header">
+        <h2 className="page-header__title page-header__title--archived">
+          Archived News view
+        </h2>
       </div>
       <div className="list-container">
         <NewsList news={news} />
