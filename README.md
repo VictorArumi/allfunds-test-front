@@ -1,70 +1,137 @@
-# Getting Started with Create React App
+# News app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Technical skills assessment for Allfunds.
 
-## Available Scripts
+News app is a simple SPA in which there are 2 views: news and archived.
 
-In the project directory, you can run:
+- News view displays a list of all the news stored in DB (mongoDB) that are not archived (archived:false). News are sorted by date of creation (storageDate), with new news first. In this view it is possible to add a new new by clicking to 'add new', filling in the form and submitting it. Each new can be archived with its button 'archive'. View is updated when one of these actions is triggered.
 
-### `npm start`
+- Archived news view displays all the news that have been archived (archived:true). Archived news are sorted by archive date. Each archived new has a button that allows the user to eliminate it. This will delete the new from the database and will also be reflected in the archived news that are currently displayed (it will disappear).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<br/>
+All the data is queried from a mongoDB database, through allfunds-test-api REST API, also created for this assesment.
+<br/>
+The app is styled with styled-components (it is responsive to display size) and tested with Jest. State management is handled with Redux.
+</br>
+</br>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+<div align="center">
+<br/>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)](https://sonarcloud.io/summary/new_code?id=VictorArumi_allfunds-test-front)
 
-### `npm run build`
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=VictorArumi_allfunds-test-front&metric=coverage)](https://sonarcloud.io/summary/new_code?id=VictorArumi_allfunds-test-front)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=VictorArumi_allfunds-test-front&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=VictorArumi_allfunds-test-front)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=VictorArumi_allfunds-test-front&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=VictorArumi_allfunds-test-front)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=VictorArumi_allfunds-test-front&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=VictorArumi_allfunds-test-front)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=VictorArumi_allfunds-test-front&metric=bugs)](https://sonarcloud.io/summary/new_code?id=VictorArumi_allfunds-test-front)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=VictorArumi_allfunds-test-front&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=VictorArumi_allfunds-test-front)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<br/>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![Redux](https://img.shields.io/badge/redux-%2320232a.svg?style=for-the-badge&logo=redux&logoColor=%2361DAFB)
+![Styled-Components](https://img.shields.io/badge/styled_components-%2338B2AC.svg?style=for-the-badge&logo=styled-components&logoColor=black)
+![Vercel](https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=white)
+![Render](https://img.shields.io/badge/render-%2320232a.svg?style=for-the-badge&logo=render&logoColor=white)
+![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 
-### `npm run eject`
+</div>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<div align="center">
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Screenshots
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+</div>
+<div align="center">
 
-## Learn More
+<img style="height:300px" src="https://media.giphy.com/media/FJCDDcTO1vpoXiRQ5Z/giphy.gif" />
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+</div>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+<br/>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<div align="center">
+<br/>
 
-### Analyzing the Bundle Size
+## [Live website](https://news-app-front.netlify.app) 🔗
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+(wait a moment... until the API wakes up!)
+<br/>
 
-### Making a Progressive Web App
+</div>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Project info📚
 
-### Advanced Configuration
+**Technologies used:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```
+- Javascript
+- React
+- Redux
+- Styled-components
+- Jest
+```
 
-### Deployment
+**Components**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```
+.
+└── components(/)
+    └── Header
+    └── Navigation
+    └── New
+    └── NewForm
+    └── NewsList
 
-### `npm run build` fails to minify
+.
+└── pages(/)
+    └── NewsPage
+    └── ArchivedNewsPage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+```
+
+<br/>
+<br/>
+
+---
+
+<br/>
+<br/>
+
+## Commands
+
+```shell
+    # Installation command
+    npm i or npm/yarn i
+
+    # Running command
+    npm start
+
+    # Build command
+    npm run build
+
+    # Testing command
+    npm run test
+
+<br/>
+
+---
+
+<br/>
+
+## License
+
+[MIT](https://opensource.org/licenses/MIT)
+```
