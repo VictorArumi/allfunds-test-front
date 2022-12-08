@@ -38,7 +38,7 @@ describe("Given a NewsSlice reducer", () => {
     test("Then it should return the new state with the original list plus the created new", () => {
       const payload = mockNews[0];
 
-      const expectedUpdatedNews = [...mockNews, mockNews[0]];
+      const expectedUpdatedNews = [mockNews[0], ...mockNews];
 
       const createNewAction = createNewActionCreator(payload);
       const updatedNewsState = newsReducer(mockNews, createNewAction);
