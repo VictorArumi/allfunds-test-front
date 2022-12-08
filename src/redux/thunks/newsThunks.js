@@ -8,45 +8,51 @@ import {
 export const loadNewsThunk = () => async (dispatch) => {
   const url = `${process.env.REACT_APP_API_URL}news`;
 
-  const {
-    data: { news },
-  } = await axios.get(url);
+  try {
+    const {
+      data: { news },
+    } = await axios.get(url);
 
-  dispatch(loadNewsActionCreator(news));
+    dispatch(loadNewsActionCreator(news));
+  } catch {}
 };
 
 export const loadArchivedNewsThunk = () => async (dispatch) => {
   const url = `${process.env.REACT_APP_API_URL}news/archived`;
+  try {
+    const {
+      data: { archivedNews },
+    } = await axios.get(url);
 
-  const {
-    data: { archivedNews },
-  } = await axios.get(url);
-
-  dispatch(loadNewsActionCreator(archivedNews));
+    dispatch(loadNewsActionCreator(archivedNews));
+  } catch {}
 };
 
 export const archiveNewThunk = (id) => async (dispatch) => {
   const url = `${process.env.REACT_APP_API_URL}news/edit/${id}`;
+  try {
+    await axios.put(url);
 
-  await axios.put(url);
-
-  dispatch(deleteNewActionCreator(id));
+    dispatch(deleteNewActionCreator(id));
+  } catch {}
 };
 
 export const deleteNewThunk = (id) => async (dispatch) => {
   const url = `${process.env.REACT_APP_API_URL}news/archived/${id}`;
+  try {
+    await axios.delete(url);
 
-  await axios.delete(url);
-
-  dispatch(deleteNewActionCreator(id));
+    dispatch(deleteNewActionCreator(id));
+  } catch {}
 };
 
 export const createNewThunk = (submittedNewData) => async (dispatch) => {
   const url = `${process.env.REACT_APP_API_URL}news/create`;
 
-  const {
-    data: { createdNew },
-  } = await axios.post(url, submittedNewData);
-
-  dispatch(createNewActionCreator(createdNew));
+  try {
+    const {
+      data: { createdNew },
+    } = await axios.post(url, submittedNewData);
+    dispatch(createNewActionCreator(createdNew));
+  } catch {}
 };
