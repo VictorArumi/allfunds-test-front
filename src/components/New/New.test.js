@@ -1,6 +1,10 @@
 import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+
 import New from "./New";
 import mockNew from "../../mocks/mockNew";
+import { Provider } from "react-redux";
+import store from "../../redux/store";
 
 const expectedTitleText = mockNew.title;
 const expectedDescriptionText = mockNew.description;
@@ -10,12 +14,23 @@ const totalExpectedButtons = 1;
 const expectedPostedDate = "December 5th 2022";
 const expectedArchiveDate = "December 7th 2022";
 
+const mockDispatch = jest.fn();
+
+jest.mock("react-redux", () => ({
+  ...jest.requireActual("react-redux"),
+  useDispatch: () => mockDispatch,
+}));
+
 describe("Given a New component", () => {
   describe("When it's invoked with archived property false", () => {
-    test("Then it should render a the New component with newMock title, author, post dates and content values, and a button with 'Archive New' text", () => {
+    test("Then it should render a the New component with newMock title, author, post dates and content values, and a button with 'Archive New' text which should call dispatch when is clicked", () => {
       const archiveButtonText = "Archive New";
 
-      render(<New _new={mockNew} />);
+      render(
+        <Provider store={store}>
+          <New _new={mockNew} />
+        </Provider>
+      );
 
       const newTitle = screen.getByRole("heading", {
         level: 3,
@@ -33,8 +48,9 @@ describe("Given a New component", () => {
       const archiveButton = screen.getByRole("button", {
         name: archiveButtonText,
       });
-
       const buttonsInNew = screen.getAllByRole("button");
+
+      userEvent.click(archiveButton);
 
       expect(newTitle).toBeInTheDocument();
       expect(newDescription).toBeInTheDocument();
@@ -43,6 +59,7 @@ describe("Given a New component", () => {
       expect(newContent).toBeInTheDocument();
       expect(archiveButton).toBeInTheDocument();
       expect(buttonsInNew).toHaveLength(totalExpectedButtons);
+      expect(mockDispatch).toHaveBeenCalledTimes(1);
     });
   });
 
@@ -52,7 +69,11 @@ describe("Given a New component", () => {
       mockNew.archiveDate = "2022-12-07T17:00:00.000Z";
       const deleteButtonText = "Delete New";
 
-      render(<New _new={mockNew} />);
+      render(
+        <Provider store={store}>
+          <New _new={mockNew} />
+        </Provider>
+      );
 
       const newTitle = screen.getByRole("heading", {
         level: 3,
@@ -74,6 +95,8 @@ describe("Given a New component", () => {
 
       const buttonsInNew = screen.getAllByRole("button");
 
+      userEvent.click(deleteButton);
+
       expect(newTitle).toBeInTheDocument();
       expect(newDescription).toBeInTheDocument();
       expect(newPostedDate).toBeInTheDocument();
@@ -82,6 +105,7 @@ describe("Given a New component", () => {
       expect(newContent).toBeInTheDocument();
       expect(deleteButton).toBeInTheDocument();
       expect(buttonsInNew).toHaveLength(totalExpectedButtons);
+      expect(mockDispatch).toHaveBeenCalledTimes(1);
     });
   });
 });
