@@ -1,5 +1,8 @@
 import axios from "axios";
-import { loadNewsActionCreator } from "../features/newsSlice/newsSlice";
+import {
+  deleteNewActionCreator,
+  loadNewsActionCreator,
+} from "../features/newsSlice/newsSlice";
 
 export const loadNewsThunk = () => async (dispatch) => {
   const url = `${process.env.REACT_APP_API_URL}news`;
@@ -19,4 +22,20 @@ export const loadArchivedNewsThunk = () => async (dispatch) => {
   } = await axios.get(url);
 
   dispatch(loadNewsActionCreator(archivedNews));
+};
+
+export const archiveNewThunk = (id) => async (dispatch) => {
+  const url = `${process.env.REACT_APP_API_URL}news/edit/${id}`;
+
+  await axios.put(url);
+
+  dispatch(deleteNewActionCreator(id));
+};
+
+export const deleteNewThunk = (id) => async (dispatch) => {
+  const url = `${process.env.REACT_APP_API_URL}news/archived/${id}`;
+
+  await axios.delete(url);
+
+  dispatch(deleteNewActionCreator(id));
 };
