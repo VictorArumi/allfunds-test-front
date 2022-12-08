@@ -90,6 +90,10 @@ const NewStyled = styled.article`
 
   .archive-date {
     margin: 0.5rem;
+
+    @media (max-width: 700px) {
+      font-size: 0.8rem;
+    }
   }
   button {
     display: flex;
@@ -99,6 +103,7 @@ const NewStyled = styled.article`
     background-color: #212948;
     border-radius: 0.5rem;
     border: 0.1rem solid #212948;
+    cursor: pointer;
   }
 
   .delete-button {
