@@ -102,7 +102,7 @@ The app is styled with styled-components (it is responsive to display size) and 
 
 ```
 
- <br/>
+<br/>
 <br/>
 
 ---
