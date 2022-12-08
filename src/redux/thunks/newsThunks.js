@@ -1,5 +1,6 @@
 import axios from "axios";
 import {
+  createNewActionCreator,
   deleteNewActionCreator,
   loadNewsActionCreator,
 } from "../features/newsSlice/newsSlice";
@@ -38,4 +39,14 @@ export const deleteNewThunk = (id) => async (dispatch) => {
   await axios.delete(url);
 
   dispatch(deleteNewActionCreator(id));
+};
+
+export const createNewThunk = (submittedNewData) => async (dispatch) => {
+  const url = `${process.env.REACT_APP_API_URL}news/create`;
+
+  const {
+    data: { createdNew },
+  } = await axios.post(url, submittedNewData);
+
+  dispatch(createNewActionCreator(createdNew));
 };
