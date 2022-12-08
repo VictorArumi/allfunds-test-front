@@ -9,13 +9,14 @@ import {
   deleteNewThunk,
   loadArchivedNewsThunk,
   loadNewsThunk,
+  createNewThunk,
 } from "./newsThunks";
+
+const dispatch = jest.fn();
 
 describe("Given a loadNewsThunk", () => {
   describe("When it is called", () => {
     test("Then it should call dispatch with a loadNews action", async () => {
-      const dispatch = jest.fn();
-
       const payload = mockNews;
 
       const loadNewsAction = loadNewsActionCreator(payload);
@@ -37,8 +38,6 @@ describe("Given a loadNewsThunk", () => {
 describe("Given a loadArchivedNewsThunk", () => {
   describe("When it is called", () => {
     test("Then it should call dispatch with a loadNews action", async () => {
-      const dispatch = jest.fn();
-
       const payload = mockNews;
 
       const loadNewsAction = loadNewsActionCreator(payload);
@@ -60,8 +59,6 @@ describe("Given a loadArchivedNewsThunk", () => {
 describe("Given a archiveNewThunk", () => {
   describe("When it is called with an id", () => {
     test("Then it should call dispatch with a deleteNew action", async () => {
-      const dispatch = jest.fn();
-
       const payload = mockNews[0].id;
 
       const deleteNewAction = deleteNewActionCreator(payload);
@@ -83,8 +80,6 @@ describe("Given a archiveNewThunk", () => {
 describe("Given a deleteNewThunk", () => {
   describe("When it is called with an id", () => {
     test("Then it should call dispatch with a deleteNew action", async () => {
-      const dispatch = jest.fn();
-
       const payload = mockNews[0].id;
 
       const deleteNewAction = deleteNewActionCreator(payload);
@@ -99,6 +94,24 @@ describe("Given a deleteNewThunk", () => {
       await thunk(dispatch);
 
       expect(dispatch).toHaveBeenCalledWith(deleteNewAction);
+    });
+  });
+});
+
+describe("Given a CreateNewThunk", () => {
+  describe("When it is called with  valid submittedNewData", () => {
+    test("Then it should call dispatch with a crateNew action", async () => {
+      const createdNew = mockNews[0];
+
+      axios.post = jest.fn().mockResolvedValue({
+        data: { createdNew: createdNew },
+      });
+
+      const thunk = createNewThunk(createdNew);
+
+      await thunk(dispatch);
+
+      expect(dispatch).toHaveBeenCalled();
     });
   });
 });
