@@ -1,5 +1,7 @@
 import { render, screen } from "@testing-library/react";
+import { Provider } from "react-redux";
 import mockNews from "../../mocks/mockNews";
+import store from "../../redux/store";
 import NewsList from "./NewsList";
 
 describe("Given a NewsList component", () => {
@@ -8,7 +10,11 @@ describe("Given a NewsList component", () => {
       const newsList = mockNews;
       const expectedListItems = mockNews.length;
 
-      render(<NewsList news={newsList} />);
+      render(
+        <Provider store={store}>
+          <NewsList news={newsList} />
+        </Provider>
+      );
 
       const totalListItems = screen.getAllByRole("listitem");
 

@@ -7,9 +7,14 @@ const newsSlice = createSlice({
   initialState,
   reducers: {
     loadNews: (news, action) => [...action.payload],
+    deleteNew: (news, action) =>
+      news.filter((_new) => _new.id !== action.payload),
   },
 });
 
-export const { loadNews: loadNewsActionCreator } = newsSlice.actions;
+export const {
+  loadNews: loadNewsActionCreator,
+  deleteNew: deleteNewActionCreator,
+} = newsSlice.actions;
 
 export default newsSlice.reducer;

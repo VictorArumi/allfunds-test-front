@@ -1,7 +1,17 @@
 import NewStyled from "./NewStyled";
 import moment from "moment";
+import { useDispatch } from "react-redux";
+import { archiveNewThunk, deleteNewThunk } from "../../redux/thunks/newsThunks";
 
 const New = ({ _new }) => {
+  const dispatch = useDispatch();
+  const archiveNew = () => {
+    dispatch(archiveNewThunk(_new.id));
+  };
+  const deleteNew = () => {
+    dispatch(deleteNewThunk(_new.id));
+  };
+
   return (
     <NewStyled>
       <div className="new-header">
@@ -29,10 +39,14 @@ const New = ({ _new }) => {
                 {moment(_new.archiveDate).format("MMMM Do YYYY")}
               </time>{" "}
             </p>
-            <button className="delete-button">Delete New</button>
+            <button className="delete-button" onClick={deleteNew}>
+              Delete New
+            </button>
           </>
         ) : (
-          <button className="archive-button">Archive New</button>
+          <button className="archive-button" onClick={archiveNew}>
+            Archive New
+          </button>
         )}
       </footer>
     </NewStyled>

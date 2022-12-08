@@ -1,7 +1,15 @@
 import axios from "axios";
 import mockNews from "../../mocks/mockNews";
-import { loadNewsActionCreator } from "../features/newsSlice/newsSlice";
-import { loadArchivedNewsThunk, loadNewsThunk } from "./newsThunks";
+import {
+  deleteNewActionCreator,
+  loadNewsActionCreator,
+} from "../features/newsSlice/newsSlice";
+import {
+  archiveNewThunk,
+  deleteNewThunk,
+  loadArchivedNewsThunk,
+  loadNewsThunk,
+} from "./newsThunks";
 
 describe("Given a loadNewsThunk", () => {
   describe("When it is called", () => {
@@ -45,6 +53,52 @@ describe("Given a loadArchivedNewsThunk", () => {
       await thunk(dispatch);
 
       expect(dispatch).toHaveBeenCalledWith(loadNewsAction);
+    });
+  });
+});
+
+describe("Given a archiveNewThunk", () => {
+  describe("When it is called with an id", () => {
+    test("Then it should call dispatch with a deleteNew action", async () => {
+      const dispatch = jest.fn();
+
+      const payload = mockNews[0].id;
+
+      const deleteNewAction = deleteNewActionCreator(payload);
+
+      axios.put = jest.fn().mockResolvedValue({
+        status: 200,
+        data: { archivedNew: { ...mockNews[0], archived: true } },
+      });
+
+      const thunk = archiveNewThunk(mockNews[0].id);
+
+      await thunk(dispatch);
+
+      expect(dispatch).toHaveBeenCalledWith(deleteNewAction);
+    });
+  });
+});
+
+describe("Given a deleteNewThunk", () => {
+  describe("When it is called with an id", () => {
+    test("Then it should call dispatch with a deleteNew action", async () => {
+      const dispatch = jest.fn();
+
+      const payload = mockNews[0].id;
+
+      const deleteNewAction = deleteNewActionCreator(payload);
+
+      axios.delete = jest.fn().mockResolvedValue({
+        status: 200,
+        data: { archivedNew: { ...mockNews[0], archived: true } },
+      });
+
+      const thunk = deleteNewThunk(mockNews[0].id);
+
+      await thunk(dispatch);
+
+      expect(dispatch).toHaveBeenCalledWith(deleteNewAction);
     });
   });
 });
