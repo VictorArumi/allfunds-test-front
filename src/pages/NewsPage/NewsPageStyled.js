@@ -69,6 +69,9 @@ const NewsPageStyled = styled.div`
     justify-content: center;
     vertical-align: center;
     width: 70%;
+    @media (max-width: 700px) {
+      width: 90%;
+    }
   }
 `;
 
