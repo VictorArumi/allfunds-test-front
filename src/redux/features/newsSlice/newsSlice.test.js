@@ -1,5 +1,6 @@
 import mockNews from "../../../mocks/mockNews";
 import newsReducer, {
+  createNewActionCreator,
   deleteNewActionCreator,
   loadNewsActionCreator,
 } from "./newsSlice";
@@ -28,6 +29,19 @@ describe("Given a NewsSlice reducer", () => {
 
       const deleteNewAction = deleteNewActionCreator(payload);
       const updatedNewsState = newsReducer(mockNews, deleteNewAction);
+
+      expect(updatedNewsState).toEqual(expectedUpdatedNews);
+    });
+  });
+
+  describe("When it receives an initial state and a createNew action", () => {
+    test("Then it should return the new state with the original list plus the created new", () => {
+      const payload = mockNews[0];
+
+      const expectedUpdatedNews = [...mockNews, mockNews[0]];
+
+      const createNewAction = createNewActionCreator(payload);
+      const updatedNewsState = newsReducer(mockNews, createNewAction);
 
       expect(updatedNewsState).toEqual(expectedUpdatedNews);
     });
