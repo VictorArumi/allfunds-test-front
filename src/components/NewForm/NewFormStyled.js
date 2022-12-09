@@ -67,6 +67,20 @@ const NewFormStyled = styled.div`
       height: 2rem;
     }
   }
+
+  .disclaimer-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: -0.3rem;
+
+    .disclaimer {
+      color: #bf5353;
+      font-size: 0.7rem;
+      font-weight: 600;
+      margin: 0;
+    }
+  }
 `;
 
 export default NewFormStyled;
