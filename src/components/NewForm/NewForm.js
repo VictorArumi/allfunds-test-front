@@ -52,7 +52,7 @@ const NewForm = ({ setOpenForm }) => {
           <label htmlFor="description">
             Description
             <input
-              placeholder="Type here (max 120 char.)"
+              placeholder="Type here (max 240 char.)"
               name="Description"
               id="description"
               value={inputsData.description}
