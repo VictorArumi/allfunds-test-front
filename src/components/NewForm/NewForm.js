@@ -42,7 +42,9 @@ const NewForm = ({ setOpenForm }) => {
           <label htmlFor="title">
             Title
             <input
-              placeholder="Type here (max 120 char.)"
+              type="text"
+              maxlength="150"
+              placeholder="Type here (max 150 char.)"
               name="Title"
               id="title"
               value={inputsData.title}
@@ -52,7 +54,9 @@ const NewForm = ({ setOpenForm }) => {
           <label htmlFor="description">
             Description
             <input
-              placeholder="Type here (max 240 char.)"
+              type="text"
+              maxlength="300"
+              placeholder="Type here (max 300 char.)"
               name="Description"
               id="description"
               value={inputsData.description}
@@ -62,6 +66,8 @@ const NewForm = ({ setOpenForm }) => {
           <label htmlFor="content">
             Content
             <input
+              type="text"
+              maxlength="40000"
               placeholder="Type here (max 40.000 char.)"
               name="Content"
               id="content"
