@@ -124,6 +124,7 @@ The app is styled with styled-components (it is responsive to display size) and 
 
     # Testing command
     npm run test
+```
 
 <br/>
 
@@ -134,4 +135,3 @@ The app is styled with styled-components (it is responsive to display size) and 
 ## License
 
 [MIT](https://opensource.org/licenses/MIT)
-```
