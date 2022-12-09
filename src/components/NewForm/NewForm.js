@@ -42,7 +42,7 @@ const NewForm = ({ setOpenForm }) => {
           <label htmlFor="title">
             Title
             <input
-              placeholder="Paste title here"
+              placeholder="Type here (max 120 char.)"
               name="Title"
               id="title"
               value={inputsData.title}
@@ -52,7 +52,7 @@ const NewForm = ({ setOpenForm }) => {
           <label htmlFor="description">
             Description
             <input
-              placeholder="Paste description here"
+              placeholder="Type here (max 120 char.)"
               name="Description"
               id="description"
               value={inputsData.description}
@@ -62,13 +62,16 @@ const NewForm = ({ setOpenForm }) => {
           <label htmlFor="content">
             Content
             <input
-              placeholder="Paste content here"
+              placeholder="Type here (max 40.000 char.)"
               name="Content"
               id="content"
               value={inputsData.content}
               onChange={changeData}
             />
           </label>
+          <div className="disclaimer-container">
+            <p className="disclaimer">*All fields are required</p>
+          </div>
         </div>
         <button
           className="submit-button"
