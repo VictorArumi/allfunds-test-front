@@ -43,7 +43,7 @@ const NewForm = ({ setOpenForm }) => {
             Title
             <input
               type="text"
-              maxlength="150"
+              maxLength={150}
               placeholder="Type here (max 150 char.)"
               name="Title"
               id="title"
@@ -55,7 +55,7 @@ const NewForm = ({ setOpenForm }) => {
             Description
             <input
               type="text"
-              maxlength="300"
+              maxLength={300}
               placeholder="Type here (max 300 char.)"
               name="Description"
               id="description"
@@ -67,7 +67,7 @@ const NewForm = ({ setOpenForm }) => {
             Content
             <input
               type="text"
-              maxlength="40000"
+              maxLength={40000}
               placeholder="Type here (max 40.000 char.)"
               name="Content"
               id="content"
